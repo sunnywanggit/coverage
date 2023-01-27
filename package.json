@@ -7,6 +7,10 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+
+  "dependencies": {
+    "lottie-web": "^5.10.1"
+  },
   "devDependencies": {
     "nuxt": "3.0.0",
     "vite-plugin-istanbul": "^4.0.0-rc.1"

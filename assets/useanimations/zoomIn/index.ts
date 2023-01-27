@@ -1,4 +1,4 @@
-import type { Animation } from '../typing.d';
+import { AnimationSource } from '~~/types/animation';
 import zoomIn from './zoomIn.json';
 
-export default { animationData: zoomIn, animationKey: 'zoomIn' } as Animation;
+export default { animationData: zoomIn, animationKey: 'zoomIn' } as AnimationSource;

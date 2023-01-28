@@ -6,7 +6,7 @@ export type AnimationEffect =
     | 'LOOP_PLAY' // 循环播放
     | 'CLICK_PLAY_AND_SEGMENTS'; // 点击播放和片段
 
-export type Animation = {
+export type AnimationSource = {
     animationData: any;
     animationKey: string;
 };

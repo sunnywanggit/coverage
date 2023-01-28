@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, watch, ref } from 'vue';
-// import lottie from 'lottie-web';
 import lottie from 'lottie-web/build/player/lottie.js';
 import type { AnimationItem, AnimationConfigWithData, AnimationConfig } from 'lottie-web';
 import { getEvents } from '../utils/getEvents';
-import type { Animation, AnimationEffect } from '../utils/constants';
+import type { AnimationSource, AnimationEffect } from '../types/animation';
 
-const getRandomId = (key: Animation['animationKey']) => `${key}_i${Math.floor(Math.random() * 10000 + 1)}`;
+const getRandomId = (key: AnimationSource['animationKey']) => `${key}_i${Math.floor(Math.random() * 10000 + 1)}`;
 
 const props = defineProps<{
-  animation: Animation;
+  animation: AnimationSource;
   reverse?: boolean;
   options?: Partial<AnimationConfig>;
   size?: number;
@@ -65,7 +64,6 @@ watch(
 );
 
 const eventProps = ref({
-  ref: 'useAnimationRef',
   style: defaultStyles,
   onClick: (e: MouseEvent) => {
     props.onClick?.(e);
@@ -109,5 +107,5 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div v-bind="eventProps" />
+  <div ref="useAnimationRef" v-bind="eventProps" />
 </template>
